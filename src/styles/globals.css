@@ -4,9 +4,5 @@
 
 
 body{
-  @apply bg-zinc-50
-}
-
-.container{
-  @apply flex w-full h-screen justify-center items-center
+  @apply bg-sky-100
 }

@@ -16,11 +16,4 @@ interface SigInRequirements{
   password: string
 }
 
-interface RegisterRequirements{
-  name: string
-  email: string
-  password: string
-  banner: File
-}
-
 export type {AuthContextRequirements, User, SigInRequirements}

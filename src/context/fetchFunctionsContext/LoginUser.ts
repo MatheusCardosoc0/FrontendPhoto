@@ -1,7 +1,7 @@
 import Router  from "next/router";
 import { setCookie } from "nookies";
 import { toast } from "react-toastify";
-import { api } from "../../utils/axiosConfig";
+import { api } from "../../services/axiosConfig";
 import { SigInRequirements } from "../../utils/types/AuthContextRequirements";
 import { sigIn } from "../AuthContext";
 

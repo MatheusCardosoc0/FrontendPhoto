@@ -4,7 +4,8 @@ import { FormEvent, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Button, Form, Input, Anchor } from '../components/FormElements'
 import { LoginUser } from '../context/fetchFunctionsContext/LoginUser'
-import { api } from '../utils/axiosConfig'
+import { api } from '../services/axiosConfig'
+import { canSSRGuest } from '../utils/canSSRGuest'
 
 const Home: NextPage = () => {
 
@@ -23,12 +24,12 @@ const Home: NextPage = () => {
   }
 
   return (
-    <section className='container '>
+    <section className='flex h-screen w-full justify-center flex-col items-center'>
       <Form title='Login' onSubmit={handleSubmit}>
         <Input placeholder='Seu email...' onChange={e => setEmail(e.target.value)}
-        type="email" required />
+          type="email" required />
         <Input placeholder='Sua senha...' onChange={e => setPassword(e.target.value)}
-        type="password" required />
+          type="password" required />
         <Anchor href='/register'>
           Não possui uma conta?
         </Anchor>
@@ -41,3 +42,9 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export const getServerSideProps = canSSRGuest(async (ctx) => {
+  return {
+    props: {}
+  }
+})
