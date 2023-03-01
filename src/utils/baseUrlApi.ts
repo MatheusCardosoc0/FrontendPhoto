@@ -1,0 +1,1 @@
+export const baseUrlApi = 'http://localhost:3333/photo/'
