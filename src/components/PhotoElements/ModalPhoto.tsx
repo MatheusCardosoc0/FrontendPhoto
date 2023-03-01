@@ -11,7 +11,7 @@ interface ModalPhotoProps {
 
 const ModalPhoto = ({ setPhotoCurrent, photo }: ModalPhotoProps) => {
   return (
-    <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[540px] z-10 bg-gray-100 rounded-lg flex flex-col p-2 gap-2'>
+    <div className='fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[540px] z-10 bg-gray-100 rounded-lg flex flex-col p-2 gap-2'>
 
       <button className='text-6xl absolute ml-[500px] mt-[-40px] bg-teal-500 rounded-full hover:text-white'
       onClick={() => setPhotoCurrent(null)}>
@@ -27,7 +27,7 @@ const ModalPhoto = ({ setPhotoCurrent, photo }: ModalPhotoProps) => {
           </h2>
         </span>
 
-        <Button stylish='w-[140px] rounded-xl bg-gradient-to-tr from-yellow-500 via-amber-500 to-yellow-700'>
+        <Button stylish='w-[130px] rounded-xl bg-gradient-to-tr from-yellow-500 via-amber-500 to-yellow-700'>
           Doar
         </Button>
       </div>

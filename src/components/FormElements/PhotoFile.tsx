@@ -3,16 +3,17 @@ import React, { ChangeEvent } from 'react'
 interface PhotoFileProps{
   avatarUrl: string
   handleFile: (e: ChangeEvent<HTMLInputElement>) => void
+  type?: 'image' | 'avatar'
 }
 
-const PhotoFile = ({avatarUrl, handleFile}: PhotoFileProps) => {
+const PhotoFile = ({avatarUrl,type, handleFile}: PhotoFileProps) => {
   return (
     <>
       <h3 className='text-2xl text-white font-bold'>
-        Adicionar foto de perfil
+        {type == 'avatar'? 'Adicionar foto de perfil' : ''}
       </h3>
 
-      <label className='w-[200px] h-[200px] bg-black cursor-pointer rounded-full overflow-hidden'>
+      <label className={`w-[200px] h-[200px] bg-black cursor-pointer  overflow-hidden ${type == 'avatar' && 'rounded-full'}`}>
         <input
           type={"file"}
           className="hidden"

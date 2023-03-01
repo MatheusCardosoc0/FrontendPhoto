@@ -3,3 +3,4 @@ export {default as Form} from './Form';
 export {default as Input} from './Input';
 export {default as Anchor} from './Anchor';
 export {default as PhotoFile} from './PhotoFile';
+export {default as Select} from './Select';

@@ -38,7 +38,7 @@ const Dashboard = ({ categories, photos }: DashboardProps) => {
   },[categoryCurrent])
 
   return (
-    <main className='w-full'>
+    <main className='w-full overflow-x-hidden'>
       <Navbar>
         <Searchbar />
         <UserIcon />

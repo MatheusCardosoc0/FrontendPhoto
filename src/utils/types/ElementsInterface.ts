@@ -19,4 +19,9 @@ type photo = {
   views : number
 }
 
-export type {category, photo}
+type photoElements = {
+  title: string
+  description: string
+}
+
+export type {category, photo, photoElements}
