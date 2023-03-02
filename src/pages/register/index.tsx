@@ -69,7 +69,8 @@ const Register = () => {
   return (
     <section className='flex h-screen w-full justify-center flex-col items-center mb-40'>
       <Form title='Cadastre-se' onSubmit={handleSubmit}>
-        <PhotoFile handleFile={handleFile} avatarUrl={imageUrl} />
+        <PhotoFile handleFile={handleFile} avatarUrl={imageUrl}
+        type="avatar" />
         <Input placeholder='Seu Nome...'
           onChange={e => handleUserInformations(e, 'name')}
           value={userInformations.name} />

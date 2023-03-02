@@ -27,9 +27,9 @@ const ModalPhoto = ({ setPhotoCurrent, photo }: ModalPhotoProps) => {
           </h2>
         </span>
 
-        <Button stylish='w-[130px] rounded-xl bg-gradient-to-tr from-yellow-500 via-amber-500 to-yellow-700'>
+        <button className='w-[130px] rounded-xl bg-gradient-to-tr from-yellow-500 via-amber-500 to-yellow-700 p-4 text-3xl text-white font-bold hover:text-black'>
           Doar
-        </Button>
+        </button>
       </div>
       <img src={`${baseUrlApi}${photo.photo}`}
         className="h-[320px] w-full" />
