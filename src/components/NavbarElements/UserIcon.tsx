@@ -14,7 +14,7 @@ const UserIcon = () => {
   return (
     <div className='flex flex-col'>
       <button onClick={() => setViewOptionsUser(prev => !prev)}>
-        <img src={`${baseUrlApi}${user.banner}`}
+        <img src={user.banner? `${baseUrlApi}${user.banner}`: 'https://i1.sndcdn.com/avatars-000437232558-yuo0mv-t500x500.jpg'}
           className="w-[60px] h-[60px] rounded-full" />
       </button>
       {viewOptionsUser && (

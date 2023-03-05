@@ -18,15 +18,17 @@ const AuthContext = createSlice({
   initialState,
   reducers: {
     sigIn(state, {payload}: PayloadAction<User>){
-      console.log(payload.token)
+      
 
-      const {banner, email, name, id} = payload
+      if(payload){
+        const {banner, email, name, id}: User = payload
 
-      state.user = {
-        banner,
-        email,
-        id,
-        name
+        state.user = {
+          banner,
+          email,
+          id,
+          name
+      }
       }
     },
     sigOut(){

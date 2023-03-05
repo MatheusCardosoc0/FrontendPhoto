@@ -11,12 +11,12 @@ interface PhotoContainerProps {
 
 const PhotoContainer = ({ photos }: PhotoContainerProps) => {
 
-  const [photoCurrent, setPhotoCurrent] = useState<photo | null>(null)
+  const [photoSelected, setPhotoSelected] = useState<photo | null>(null)
 
   async function PhotoClickEventddView(photo: photo){
     if(!photo) return
 
-    setPhotoCurrent(photo)
+    setPhotoSelected(photo)
     await api.put('/photo/view', {
       photo_id: photo.id
     })
@@ -25,9 +25,9 @@ const PhotoContainer = ({ photos }: PhotoContainerProps) => {
   return (
     <div className='grid md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 p-4 w-full justify-center items-center'>
 
-      {photoCurrent && (
-        <ModalPhoto setPhotoCurrent={setPhotoCurrent}
-        photo={photoCurrent} />
+      {photoSelected && (
+        <ModalPhoto  setPhotoCurrent={setPhotoSelected}
+        photo={photoSelected} />
       )}
 
       {photos.map(photo => (

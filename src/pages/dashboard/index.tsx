@@ -17,10 +17,14 @@ interface DashboardProps {
 
 const Dashboard = ({ categories, photos }: DashboardProps) => {
 
-  console.log(categories)
-  console.log(photos)
   const [categoryCurrent, setCategoryCurrent] = useState('')
   const [photosCurrent, setPhotosCurrent] = useState<photo[]>([])
+  const [query, setQuery] = useState("");
+  const filteredFotos = photos.filter(
+    (foto) =>
+      foto.title.toLowerCase().includes(query.toLowerCase()) ||
+      foto.description.toLowerCase().includes(query.toLowerCase())
+  );
 
   const dispatch = useDispatch()
 
@@ -40,13 +44,11 @@ const Dashboard = ({ categories, photos }: DashboardProps) => {
   return (
     <main className='w-full overflow-x-hidden'>
       <Navbar>
-        <Searchbar />
+        <Searchbar setQuery={setQuery} />
         <UserIcon />
       </Navbar>
       <Categories categories={categories} setCategoryCurrent={setCategoryCurrent} />
-      <PhotoContainer photos={photosCurrent} />
-
-
+      <PhotoContainer photos={query? filteredFotos : photosCurrent} />
     </main>
   )
 }
