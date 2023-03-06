@@ -2,6 +2,10 @@ import axios, { AxiosError } from "axios";
 import { parseCookies } from "nookies";
 import { AuthTokenError } from "./Errors/AuthResponseError";
 
+export const baseUrl = ""
+
+//https://backend-photo.vercel.app/
+
 export function setupClient(ctx: any = undefined){
   let cookies = parseCookies(ctx)
 

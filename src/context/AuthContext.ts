@@ -28,7 +28,7 @@ const AuthContext = createSlice({
           email,
           id,
           name
-      }
+        }
       }
     },
     sigOut(){
